@@ -9,7 +9,8 @@ const domain = process.env.PRODUCTION_DOMAIN;
 const prodConfig = {
     mode: 'production',
     output: {
-        filename: '[name].[contenthash].js' // for caching issues
+        filename: '[name].[contenthash].js', // for caching issues
+        publicPath: '/container/latest/' // prepend all the scripts thats will be added to index.html with /container/latest/
     },
     plugins: [
         new ModuleFederationPlugin({
